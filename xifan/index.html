@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="稀饭网 - 健康营养的稀饭粥品搭配指南、养生食谱大全及传统饮食文化科普。提供小米粥、八宝粥、皮蛋瘦肉粥等经典粥品的制作方法与健康功效解析。">
+    <meta name="keywords" content="稀饭,养生粥,小米粥做法,皮蛋瘦肉粥,八宝粥,健康饮食">
+    <title>稀饭-健康养生粥品搭配指南与食谱大全</title>
+    <style>
+        :root {
+            --primary-color: #e6b800;
+            --primary-dark: #cca300;
+            --secondary-color: #5d4037;
+            --bg-color: #fdfbf7;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+            padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: rotate(0deg);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Categories Section */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .category-card {
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+        }
+
+        .category-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .category-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .category-desc {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Featured Recipes (List Style) */
+        .recipes-section {
+            background-color: var(--white);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+        }
+
+        .recipe-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .recipe-card {
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            box-shadow: var(--shadow);
+        }
+
+        .recipe-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .recipe-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .recipe-card:hover .recipe-img img {
+            transform: scale(1.05);
+        }
+
+        .recipe-content {
+            padding: 20px;
+        }
+
+        .recipe-tag {
+            font-size: 12px;
+            color: var(--primary-dark);
+            background-color: #fff8e1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .recipe-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .recipe-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .recipe-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Health Benefits Section */
+        .benefits-section {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        .benefits-section .section-title {
+            color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+        }
+
+        .benefit-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .benefit-text {
+            font-size: 15px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>粥</span>米稀饭
+            </a>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#recipes">经典食谱</a></li>
+                    <li><a href="#benefits">养生功效</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>一碗好稀饭，温暖你的胃与心</h1>
+                    <p>稀饭不仅是早餐的选择，更是养生的智慧。从古至今，小米、大米、五谷杂粮熬制的稀饭，承载着中华饮食文化的精髓。探索传统粥品，寻找最适合你的那一碗。</p>
+                    <a href="#recipes" class="cta-button">开始探索食谱</a>
+                </div>
+                <div class="hero-image">
+                    <!-- 使用随机种子图片模拟一碗热气腾腾的粥 -->
+                    <img src="https://picsum.photos/seed/congee1/600/400" alt="一碗热气腾腾的养生稀饭">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">稀饭分类指南</h2>
+                    <p class="section-subtitle">根据不同的食材与功效，选择适合你的稀饭类型</p>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <span class="category-icon">🌾</span>
+                        <h3 class="category-title">小米稀饭</h3>
+                        <p class="category-desc">养胃首选，富含维生素B1，适合老人小孩及肠胃虚弱者。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🥣</span>
+                        <h3 class="category-title">八宝稀饭</h3>
+                        <p class="category-desc">营养均衡，红豆、薏米、花生等多种食材熬制，口感丰富。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🥩</span>
+                        <h3 class="category-title">皮蛋瘦肉粥</h3>
+                        <p class="category-desc">经典粤式粥品，鲜香浓郁，肉质嫩滑，开胃解腻。</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-icon">🥬</span>
+                        <h3 class="category-title">蔬菜瘦肉粥</h3>
+                        <p class="category-desc">清淡健康，补充维生素与膳食纤维，适合减脂期食用。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Recipes Section -->
+        <section id="recipes" class="section-padding recipes-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">热门稀饭食谱</h2>
+                    <p class="section-subtitle">精选最受欢迎的熬制方法与独家秘方</p>
+                </div>
+                <div class="recipe-list">
+                    <!-- Recipe 1 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/millet/400/300" alt="黄金小米稀饭">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">养胃</span>
+                            <h3 class="recipe-title">黄金小米稀饭</h3>
+                            <p class="recipe-desc">只需三步，熬出金黄油亮的粥底，米油最养人。</p>
+                            <div class="recipe-info">
+                                <span>⏱ 难度：简单</span>
+                                <span>🔥 热量：低</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 2 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/pork/400/300" alt="皮蛋瘦肉粥">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">经典</span>
+                            <h3 class="recipe-title">正宗皮蛋瘦肉粥</h3>
+                            <p class="recipe-desc">米粒开花，瘦肉鲜嫩，皮蛋Q弹，香气扑鼻。</p>
+                            <div class="recipe-info">
+                                <span>⏱ 难度：中等</span>
+                                <span>🔥 热量：中</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 3 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/redbean/400/300" alt="红豆薏米粥">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">祛湿</span>
+                            <h3 class="recipe-title">红豆薏米粥</h3>
+                            <p class="recipe-desc">祛湿健脾的黄金搭档，适合湿气重的人群。</p>
+                            <div class="recipe-info">
+                                <span>⏱ 难度：简单</span>
+                                <span>🔥 热量：低</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Recipe 4 -->
+                    <article class="recipe-card">
+                        <div class="recipe-img">
+                            <img src="https://picsum.photos/seed/corn/400/300" alt="鲜玉米排骨粥">
+                        </div>
+                        <div class="recipe-content">
+                            <span class="recipe-tag">鲜美</span>
+                            <h3 class="recipe-title">鲜玉米排骨粥</h3>
+                            <p class="recipe-desc">清甜的玉米与排骨的鲜美融合，口感层次丰富。</p>
+                            <div class="recipe-info">
+                                <span>⏱ 难度：中等</span>
+                                <span>🔥 热量：中</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Benefits Section -->
+        <section id="benefits" class="section-padding benefits-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">稀饭的养生智慧</h2>
+                    <p class="section-subtitle">为什么老一辈人都爱吃稀饭？</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛡</div>
+                        <h3 class="benefit-title">保护胃黏膜</h3>
+                        <p class="benefit-text">稀饭水分含量高，软烂易消化，能减少胃肠负担，修复受损黏膜。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <h3 class="benefit-title">补充水分</h3>
+                        <p class="benefit-text">除了食物本身，稀饭提供了大量水分，有助于维持身体代谢平衡。</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🧠</div>
+                        <h3 class="benefit-title">易于吸收</h3>
+                        <p class="benefit-text">经过长时间熬煮，谷物中的淀粉充分糊化，营养更容易被人体吸收。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding faq-section">
+            <div class="container faq-container">
+                <div class="text-center">
+                    <h2 class="section-title">稀饭常见问题</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">稀饭越熬越粘稠好吗？</div>
+                        <div class="faq-answer">
+                            是的，稀饭表面形成的“米油”是米谷精华所在，营养丰富且易于消化，是稀饭最养人的部分。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">糖尿病患者可以吃稀饭吗？</div>
+                        <div class="faq-answer">
+                            建议少吃或选择杂粮稀饭。普通稀饭升糖指数较高，但将大米与燕麦、荞麦等粗粮混合熬制，可以减缓血糖上升速度。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">煮稀饭时有什么小窍门？</div>
+                        <div class="faq-answer">
+                            煮稀饭前，将米在水里浸泡半小时，或者在水烧开后放入米，可以缩短煮制时间并使粥更浓稠。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>粥米稀饭</h4>
+                    <p>专注分享传统中式粥品制作方法与健康饮食理念。让每一碗稀饭都充满温暖与营养。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#recipes">经典食谱</a></li>
+                        <li><a href="#benefits">养生功效</a></li>
+                        <li><a href="#faq">饮食指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">小米稀饭</a></li>
+                        <li><a href="#">皮蛋瘦肉粥</a></li>
+                        <li><a href="#">八宝粥</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <p>邮箱：contact@congee-guide.com</p>
+                    <p>地址：中国美食文化体验馆</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 粥米稀饭. All Rights Reserved. 本站内容仅供学习交流参考。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('navMenu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
